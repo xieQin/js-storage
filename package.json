@@ -1,0 +1,14 @@
+{
+  "name": "js-storage",
+  "version": "1.0.0",
+  "description": "storage",
+  "main": "index.js",
+  "scripts": {
+    "demo": "cd demo && parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.6.2"
+  }
+}
