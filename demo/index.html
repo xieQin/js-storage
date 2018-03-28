@@ -17,47 +17,48 @@
 </head>
 
 <body>
-    <div class="container pt-3">
-        <h4>Set</h4>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Key">
+    <div id="demo">
+        <div class="container pt-3">
+            <h4>Set</h4>
+            <div class="form-group">
+                <input type="text" v-model="set.key" class="form-control" placeholder="Key">
+            </div>
+            <div class="form-group">
+                <input type="text" v-model="set.value" class="form-control" placeholder="Value">
+            </div>
+            <button type="submit" class="btn btn-primary" @click="setValue()">Set</button>
         </div>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Value">
+        <div class="container pt-3">
+            <h4>Get</h4>
+            <div class="form-group">
+                <input type="text" v-model="get.key" class="form-control" placeholder="Key">
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Get Value Here :</label>
+                <div class="col-sm-10">
+                    <input type="text" v-model="get.value" class="form-control" readonly placeholder="Value">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" @click="getValue()">Get</button>
         </div>
-        <button type="submit" class="btn btn-primary">Set</button>
-    </div>
-    <div class="container pt-3">
-        <h4>Get</h4>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Key">
+        <div class="container pt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Key</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in store" :key="index">
+                        <td>{{item.key}}</td>
+                        <td>{{item.value}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <button type="submit" class="btn btn-primary">Get</button>
     </div>
-    <div class="container pt-3">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Key</th>
-                    <th scope="col">Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                </tr>
-                <tr>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
     <script src="./src/index.js"></script>
 </body>
 </html>
